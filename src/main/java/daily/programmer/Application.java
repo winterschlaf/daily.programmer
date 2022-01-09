@@ -37,20 +37,20 @@ public class Application {
         int letterSum = 319;
         List<Word> a = challenge.getWordsBySpecificLetterSum(words, letterSum);
         System.out.println();
-        System.out.println("there is/are " + a.size() + " word(s) with a letter sum of " + a.get(0).getLength());
+        System.out.println("1) there is/are " + a.size() + " word(s) with a letter sum of " + a.get(0).getLength());
         Output.print(a);
 
         // odd letter sum
         List<Word> b = challenge.getWordsByOddLetterSum(words);
         System.out.println();
-        System.out.println("there are " + b.size() + " words with an odd letter sum");
+        System.out.println("2) there are " + b.size() + " words with an odd letter sum");
         //Output.print(b);
 
         List<Word> c = challenge.getMostCommonLetterSum(words);
         System.out.println();
-        System.out.println("most common letter sum is "
+        System.out.println("3) most common letter sum is "
                 + c.get(0).getSum()
-                + ", there are " + c + " word(s) with this letter sum"
+                + ", there are " + c.size() + " word(s) with this letter sum"
         );
         //Output.print(c);
 
@@ -58,7 +58,7 @@ public class Application {
         int diff = 11;
         Map<Integer, List<Word>> d = challenge.getWordsWithSameLetterSumAndCertainDistance(words, diff);
         System.out.println();
-        System.out.println("there is/are "
+        System.out.println("4) there is/are "
                 + d.keySet().size()
                 + " list(s) with words of the same letter sum and a distance of "
                 + diff
@@ -73,7 +73,7 @@ public class Application {
         int letterSumLargerThan = 188;
         Map<Integer, List<Word>> e = challenge.getWordsWithSameLetterSumButDisjointCharacters(words, letterSumLargerThan);
         System.out.println();
-        System.out.println("there is/are "
+        System.out.println("5) there is/are "
                 + e.keySet().size()
                 + " list(s) with words of the same letter sum which share no characters between them");
         e.forEach((k,v) -> {
@@ -85,7 +85,7 @@ public class Application {
         // longest list of words with unique letter sums and word length
         List<Word> f = challenge.getLongestListOfUniqueLetterSumsAndLength(words);
         System.out.println();
-        System.out.println("the longest list of unique letter sums and word lengths contains " + f.size() + " word(s)");
+        System.out.println("6) the longest list of unique letter sums and word lengths contains " + f.size() + " word(s)");
         Output.print(f);
     }
 }
